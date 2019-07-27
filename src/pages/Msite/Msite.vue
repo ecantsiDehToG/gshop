@@ -1,7 +1,7 @@
 <template>
      <section class="msite">
         <!--首页头部-->
-        <HeaderTop title="昌平区北七家宏福科技园(337省道北)">
+        <HeaderTop :title="title">
           <span class="header_search" slot="left">
             <i class="iconfont icon-sousuo"></i>
           </span>
@@ -315,13 +315,16 @@ import 'swiper/dist/css/swiper.min.css'
 
 import HeaderTop from '@/components/HeaderTop/HeaderTop'
 import ShopList from '@/components/ShopList/ShopList'
+
+import {reqAddress} from '@/api/index'
+
 export default {
   data () {
     return {
       title: ''
     }
   },
-  mounted () {
+  async mounted () {
     // swiper用法：创建一个swiper对象，来实现轮播
     // eslint-disable-next-line
     let mySwiper = new Swiper('.swiper-container', {
@@ -342,6 +345,11 @@ export default {
         el: '.swiper-scrollbar'
       }
     })
+    // 获取标题中的地址
+    const result = await reqAddress('22.6418700000,114.0181130000')
+    console.log(result)
+    this.title = result.data.name
+    console.log(this.title)
   },
   components: {
     HeaderTop,
