@@ -32,7 +32,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 6,在路由配置中，每个对应的路由配置选项可以增加一个meta属性，在meta这个属性的属性值中（属性值是一个对象），我们增加一个布尔类型的键值对作为开关，那么在该路由的页面中，对于页面结构的某些部分，我们就可以通过条件渲染来控制这些部分的显示和隐藏，而条件就是通过this.$route.meta.刚设定的开关名称
 
-7,用版本控制工具git管理起来，git init初始化， git add .提交本底暂存，git commit -m '本次开发的信息'
+7,用版本控制工具git管理起来，git init初始化， git add .提交本地暂存，git commit -m '本次开发的信息'，还要创建并关联远程仓库，在github上new一个repository，就会得到一个关联的命令（remote），将这个命令在本地执行进行关联，之后就可以push提交了
 
 8，介绍项目：是一个前后端分离的spa应用，有哪些功能模块，项目中用到的技术，项目的开发模式，模块化、组件化、工程化。
 
